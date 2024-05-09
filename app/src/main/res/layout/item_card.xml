@@ -21,11 +21,25 @@
 
         <TextView
             android:id="@+id/txtProductoCardBueno"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView"
             android:textSize="34sp" />
+
+        <ImageView
+            android:id="@+id/imgEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            app:srcCompat="@drawable/ic_eliminar" />
+
+        <ImageView
+            android:id="@+id/imgEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            app:srcCompat="@drawable/ic_editar" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
