@@ -2,6 +2,8 @@ package RecyclerViewHelper
 
 import Modelo.ClaseConexion
 import Modelo.dataClassProductos
+import android.app.AlertDialog
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -67,7 +69,29 @@ class Adaptador(private var Datos: List<dataClassProductos>) : RecyclerView.Adap
         val item = Datos[position]
         holder.imgEliminar.setOnClickListener {
 
-            eliminarRegistro(item.nombreProductos, position)
+
+            val context = holder.itemView.context
+            //Creamos la alerta
+            val builder = AlertDialog.Builder(context)
+            //a mi alerta le creo un titulo
+            builder.setTitle("¿Estas seguro maje?")
+            //Ponerle un mensaje
+            builder.setMessage("Ponete serio ¿lo vas a eliminar o no?")
+
+            //PAso final, agregamos los botones
+            builder.setPositiveButton("simon"){ dialog, wich ->
+
+                eliminarRegistro(item.nombreProductos, position)
+            }
+
+            builder.setNegativeButton("Nel"){ dialog, wich ->
+
+            }
+
+            //Creamos la alerta
+            val alertDialog = builder.create()
+            //
+            alertDialog.show()
 
         }
 
